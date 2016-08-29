@@ -2,7 +2,7 @@
 const gulp = require('gulp');
 const gulpLoadPlugins = require('gulp-load-plugins');
 const browserSync = require('browser-sync');
-const connect = require('gulp-connect-php');
+const connect = require('gulp-connect');
 const del = require('del');
 const wiredep = require('wiredep').stream;
 
@@ -63,7 +63,7 @@ gulp.task('html', ['css', 'js'], () => {
     .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
     .pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', $.cssnano({safe: true, autoprefixer: false})))
-    //.pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
+    .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
     .pipe(gulp.dest('dist'));
 });
 
@@ -169,41 +169,17 @@ gulp.task('wiredep', () => {
 });
 
 
+gulp.task('build', ['lint', 'html', 'img', 'fonts', 'extras'], () => {
+  return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
+});
 
-gul
-p.task('connect', [], function() {
-  c
-  onnect.server({
-
-    hostname: '0.0.0.0',
-
-    bin: 'C:/xampp/php/php.exe',
-
-    ini: 'C:/xampp/php/php.ini',
-
-    port: 8000,
-
-    base: 'web',
-
+gulp.task('connect', ['build'], function() {
+  connect.server({
+    root: 'dist',
     livereload: true
-  }
-  );
+  });
 });
 
-
-
-gul
-p.task('build', ['lint', 'html', 'img', 'fonts', 'extras'], () => {
-  r
-  eturn gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
+gulp.task('default', ['clean'], () => {
+  gulp.start('build');
 });
-
-
-
-gul
-p.task('default', ['clean'], () => {
-  g
-    ulp.start('build');
-});
-
-

@@ -13,7 +13,6 @@
     <!-- endbuild -->
     <!-- build:css css/main.css -->
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="../../bootstrap-3.3.7-dist/css/bootstrap.css">
     <!-- endbuild -->
     <!-- build:js js/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
@@ -83,7 +82,7 @@
       <article id="about">
         <div class="container">
           <section class="row">
-            <div class="col-md-8">
+            <div class="col-md-8 wow fadeIn" data-wow-delay="0.6s">
               <h2 class="text-uppercase text-primary">O que é <strong>Cirurgia Vascular</strong>?</h2>
               <p class="text-muted">A cirurgia vascular é a especialidade responsável pelo diagnóstico e terapêutica das doenças arteriais, venosas e dos vasos linfáticos, através do manejo clínico, terapias minimamente invasivas por cateteres e reconstruções cirúrgicas. O cirurgião vascular é treinado no diagnóstico e terapêutica das doenças que afetam todas as partes dos sistema vascular, exceto aquelas que envolvem o coração e o cérebro.</p>
             </div>
@@ -91,7 +90,7 @@
           <section class="row">
             <div class="col-md-12">
               <h3 class="text-uppercase text-muted">Parceiros</h3>
-              <ul class="list-unstyled list-inline nav-justified">
+              <ul class="list-unstyled list-inline nav-justified wow fadeIn" data-wow-delay="0.6s">
                 <li class="">
                   <a href="#unimed">
                     <img src="img/parceiros/unimed.png" alt="">
@@ -119,19 +118,19 @@
       </article>
       <article id="servicos">
         <section class="row text-center">
-          <h2 class="text-uppercase">O que nos fazemos?</h2>
-          <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non sollicitudin leo.</h3>
-          <a class="btn btn-contact btn-default" href="#contato">
+          <h2 class="text-uppercase wow fadeIn" data-wow-delay="0.6s">O que nos fazemos?</h2>
+          <h3 class="wow fadeIn" data-wow-delay="0.6s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non sollicitudin leo.</h3>
+          <a class="btn btn-contact btn-default wow fadeIn" data-wow-delay="0.6s" href="#contato">
             entre em <strong>contato</strong>
           </a>
-          <a class="link-arrow col-md-12 text-center" href="#about">
+          <a class="link-arrow col-md-12 text-center wow fadeIn" data-wow-delay="0.6s" href="#about">
             <img class="img-center" src="img/servicos/arrow.png" alt="">
           </a>
         </section>
         <section class="bg-opacity">
           <div class="container">
             <div class="row">
-              <div class="col-md-3 text-center">
+              <div class="col-md-3 text-center wow fadeIn" data-wow-delay="0.6s">
                 <div class="circle">
                   <img class="img-responsive" src="img/servicos/EscleroterapiadeVarizes-icon.png" alt="">
                 </div>
@@ -141,7 +140,7 @@
                   saiba <strong>mais</strong>
                 </a>
               </div>
-              <div class="col-md-3 text-center">
+              <div class="col-md-3 text-center wow fadeIn" data-wow-delay="0.6s">
                 <div class="circle">
                   <img class="img-responsive" src="img/servicos/microcirurgia-icon.png" alt="">
                 </div>
@@ -151,7 +150,7 @@
                   saiba <strong>mais</strong>
                 </a>
               </div>
-              <div class="col-md-3 text-center">
+              <div class="col-md-3 text-center wow fadeIn" data-wow-delay="0.6s">
                 <div class="circle">
                   <img class="img-responsive" src="img/servicos/cirurgialazer-icon.png" alt="">
                 </div>
@@ -161,7 +160,7 @@
                   saiba <strong>mais</strong>
                 </a>
               </div>
-              <div class="col-md-3 text-center">
+              <div class="col-md-3 text-center wow fadeIn" data-wow-delay="0.6s">
                 <div class="circle">
                   <img class="img-responsive " src="img/servicos/cirurgia-icon.png" alt="">
                 </div>
@@ -178,7 +177,7 @@
       <article id="doctor">
         <div class="container">
           <section class="row">
-            <div class="col-md-5">
+            <div class="col-md-5 wow scrollInTop" data-wow-delay="0.6s">
               <h2 class="text-uppercase text-primary">Marcelo <strong>Mandelli</strong></h2>
               <p>
                 Proin egestas imperdiet erat et dapibus. Proin pharetra, tortor quis tempus blandit, est elit lobortis urna, id bibendum nisl sem et nunc. Curabitur sit amet consequat nisl. Sed pulvinar accumsan libero quis mollis. Fusce nec sagittis justo. Aenean pulvinar massa ut nisi varius, sit amet placerat nulla iaculis. Proin odio lorem, hendrerit auctor ante eu, pulvinar ullamcorper arcu. In nec tempor nisl. Vestibulum a iaculis nisi, at gravida dolor. Suspendisse lacus lorem, vestibulum vitae dapibus non, maximus in arcu. Maecenas egestas urna neque, ut fermentum ante rhoncus in. Cras blandit odio sit amet bibendum molestie. Morbi luctus, erat at tempor euismod, mauris erat fermentum purus, quis molestie sem lectus venenatis metus.
@@ -333,13 +332,13 @@
         </div>
       </article>
       <article id="news">
-        <section id="newsletter">
+        <section id="letter">
           <div class="container">
             <div class="row">
               <div class="col-md-offset-3 col-md-6 text-center">
                 <form id="newsletter" action="#news" method="POST" role="form">
                   <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Digite seu e-mail...">
+                    <input type="email" class="form-control" placeholder="Digite seu e-mail...">
                     <span class="input-group-btn">
                       <button class="btn" type="submit">
                         <span class="glyphicon glyphicon-chevron-right"></span>
@@ -385,34 +384,41 @@
         <div class="container">
           <div class="row">
             <div class="col-md-7">
-              <form class="row" id="#contact" method="POST" role="form">
+              <form class="row" id="contato" role="form">
                 <div class="col-md-12">
                   <h2>Entre em contato</h2>
                   <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non sollicitudin leo.</h3>
                 </div>
                 <fieldset class="col-md-6">
                   <div class="form-group">
+                    <label for="nome" class="hidden">seu nome</label>
                     <input type="text" class="form-control" name="nome" id="nome" placeholder="seu nome">
                   </div>
                   <div class="form-group">
+                    <label for="phone" class="hidden">seu telefone</label>
                     <input type="tel" class="form-control" name="phone" id="phone" placeholder="seu telefone">
                   </div>
                 </fieldset>
                 <fieldset class="col-md-6">
                   <div class="form-group">
+                    <label for="email" class="hidden">seu e-mail</label>
                     <input type="email" class="form-control" name="email" id="email" placeholder="seu e-mail">
                   </div>
                   <div class="form-group">
+                    <label for="subject" class="hidden"> assunto</label>
                     <input type="text" class="form-control" name="subject" id="subject" placeholder="assunto">
                   </div>
                 </fieldset>
                 <fieldset class="col-md-12">
                   <div class="form-group">
+                    <label for="mensagem" class="hidden">mensagem</label>
                     <textarea name="mensagem" class="form-control" id="mensagem" placeholder="mensagem" rows="3"></textarea>
                   </div>
                   <button type="submit" class="btn btn-contato">Enviar</button>
                 </fieldset>
               </form>
+              <div id="validacao" class="col-md-12">
+              </div>
             </div>
           </div>
         </div>
@@ -515,6 +521,10 @@
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
+    <script src="/bower_components/jquery-mask-plugin/dist/jquery.mask.js"></script>
+    <script src="/bower_components/jquery-form/jquery.form.js"></script>
+    <script src="/bower_components/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="/bower_components/jquery-validation/dist/additional-methods.js"></script>
     <script src="/bower_components/wow/dist/wow.js"></script>
     <!-- endbuild -->
     <!-- build:js js/main.js -->
