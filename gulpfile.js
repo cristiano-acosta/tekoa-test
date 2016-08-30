@@ -64,7 +64,8 @@ gulp.task('html', ['css', 'js'], () => {
     .pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', $.cssnano({safe: true, autoprefixer: false})))
     .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('web'));
 });
 
 gulp.task('img', () => {
@@ -76,14 +77,16 @@ gulp.task('img', () => {
       // as hooks for embedding and styling
       svgoPlugins: [{cleanupIDs: false}]
     })))
-    .pipe(gulp.dest('dist/img'));
+    .pipe(gulp.dest('dist/img'))
+    .pipe(gulp.dest('web/img'));
 });
 
 gulp.task('fonts', () => {
   return gulp.src(require('main-bower-files')('**/*.{eot,svg,ttf,woff,woff2}', function (err) {})
     .concat('app/fonts/**/*'))
     .pipe(gulp.dest('.tmp/fonts'))
-    .pipe(gulp.dest('dist/fonts'));
+    .pipe(gulp.dest('dist/fonts'))
+    .pipe(gulp.dest('web/fonts'));
 });
 
 gulp.task('extras', () => {
@@ -92,7 +95,8 @@ gulp.task('extras', () => {
     '!app/*.html'
   ], {
     dot: true
-  }).pipe(gulp.dest('dist'));
+  }).pipe(gulp.dest('dist'))
+  .pipe(gulp.dest('web'));
 });
 
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
@@ -175,7 +179,7 @@ gulp.task('build', ['lint', 'html', 'img', 'fonts', 'extras'], () => {
 
 gulp.task('connect', ['build'], function() {
   connect.server({
-    root: 'dist',
+    root: 'web',
     livereload: true
   });
 });
