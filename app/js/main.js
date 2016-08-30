@@ -76,7 +76,7 @@ jQuery(document).ready(function() {
         var dados = $( 'form#contato' ).serialize();
         $.ajax({
           type:'POST',
-          url:'enviar.php',
+          url:'http://tekoa-test.herokuapp.com/index.php?r=contato/contato',
           data:dados,
           dataType:'html',
           success:function (data) {
@@ -96,6 +96,47 @@ jQuery(document).ready(function() {
       }
     });
     //$(this).validate();
+  });
+
+  $('form#newsletter').each(function(){
+    $(this).validate({
+      errorClass:'help-block label label-danger',
+      errorElement:'p',
+      highlight: function (element, errorClass, validClass) {
+        $(element).parents('div.control-group').addClass('error');
+      },
+      unhighlight: function (element, errorClass, validClass) {
+        $(element).parents('.error').removeClass('error');
+      },
+      rules:{
+        email:{ required:true, email:true },
+      },
+      messages:{
+        email:{ required:'Informe o seu email.', email:'Ops, informe um email vÃ¡lido' },
+      },
+      submitHandler:function ( form ) {
+        var dados = $( 'form#newsletter' ).serialize();
+        $.ajax({
+          type:'POST',
+          url:'http://tekoa-test.herokuapp.com/newsletter',
+          data:dados,
+          dataType:'html',
+          success:function (data) {
+            $('#validacao').html(data).animate({opacity:1}, 1000).mouseover(function (){
+              $(this).animate({ opacity:0 }, 1000);
+            });
+            $('form#newsletter')[0].reset();
+          },
+          error:function(data){
+            $('#validacao').html(data).animate({opacity:1}, 1000).mouseover(function (){
+              $(this).animate({ opacity:0 }, 1000);
+            });
+            $('form#newsletter')[0].reset();
+          }
+        });
+        return false;
+      }
+    });
   });
 
   var wow = new WOW(
